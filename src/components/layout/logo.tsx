@@ -12,7 +12,7 @@ type LogoProps = {
   className?: string;
   variant?: 'wordmark' | 'mark';
   size?: 'nav' | 'footer';
-  /** Light wordmark on dark backgrounds (menu, footer) */
+  /** Light wordmark on dark backgrounds (menu) */
   preferLight?: boolean;
 };
 
@@ -28,7 +28,9 @@ const Logo = ({
   useEffect(() => setMounted(true), []);
 
   const useLightWordmark =
-    preferLight === true || (mounted && resolvedTheme === 'dark');
+    size === 'footer' ||
+    preferLight === true ||
+    (mounted && resolvedTheme === 'dark');
 
   const src =
     variant === 'mark'
@@ -52,7 +54,7 @@ const Logo = ({
       <img
         src={src}
         alt={STUDIO.name}
-        className={sizeClass}
+        className={cn(sizeClass, size === 'footer' && 'dark:invert')}
         width={variant === 'mark' ? 221 : 628}
         height={variant === 'mark' ? 221 : 98}
         decoding="async"

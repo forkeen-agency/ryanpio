@@ -56,7 +56,7 @@ const Footer = () => {
           </div>
 
           <div className="flex flex-1 flex-col items-center justify-center gap-3 py-10">
-            <Logo preferLight size="footer" />
+            <Logo size="footer" />
             <span className="text-background/70 text-base md:text-lg">
               {STUDIO.tagline}
             </span>
