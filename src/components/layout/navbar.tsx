@@ -89,8 +89,7 @@ export const Navbar = ({
         className={cn(
           'bigger-container inset-x-0 z-50 flex items-center justify-between py-5 transition-transform duration-700 ease-in-out md:py-6',
           pathname === '/' && 'inset-x-5 pt-10.5 md:inset-x-6 md:py-12.5',
-          pathname === '/' && 'text-background',
-          pathname !== '/' && isMenuOpen && 'text-background',
+          isMenuOpen && 'text-background',
           'fixed',
           isBannerVisible && 'mt-14', //banner height
           isNavbarHidden &&
@@ -137,7 +136,7 @@ export const Navbar = ({
             </button>
           </div>
           <div onClick={() => setIsMenuOpen(false)}>
-            <Logo preferLight={pathname === '/' || isMenuOpen} />
+            <Logo {...(isMenuOpen ? { preferLight: true } : {})} />
           </div>
 
           <AnimatePresence mode="wait">
@@ -170,7 +169,7 @@ export const Navbar = ({
                     variant="outline"
                     asChild
                     className={cn(
-                      (pathname === '/' || isAnimating) && 'text-background',
+                      (isMenuOpen || isAnimating) && 'text-background',
                     )}
                   >
                     <Link href="/contact">Peça um diagnóstico</Link>

@@ -24,7 +24,10 @@ export const Logos = async () => {
               alt={project.name}
               width={160}
               height={48}
-              className={cn('h-10 w-auto max-w-[160px] object-contain')}
+              className={cn(
+                'h-10 w-auto max-w-[160px] object-contain',
+                'invert dark:invert-0',
+              )}
             />
           </Link>
         ))}
