@@ -22,6 +22,13 @@ const plusJakartaSans = Plus_Jakarta_Sans({
   weight: ['400', '500', '600', '700'],
 });
 
+const ogImage = {
+  url: '/images/projects/dream/1.jpg',
+  width: 4000,
+  height: 2250,
+  alt: 'Dream — identidade visual por Studio Pio.',
+} as const;
+
 export const metadata: Metadata = {
   metadataBase: new URL('https://hive-nextjs-template.vercel.app'),
   title: {
@@ -60,21 +67,14 @@ export const metadata: Metadata = {
     description:
       'Studio Pio. — branding e estratégia de marca. Método PONTO: diagnóstico, estratégia, direção, identidade e lançamento.',
     siteName: 'Studio Pio.',
-    images: [
-      {
-        url: '/og-image.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'Studio Pio. — Branding e Estratégia de Marca',
-      },
-    ],
+    images: [ogImage],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Studio Pio. — Branding e Estratégia de Marca',
     description:
       'Studio Pio. — branding e estratégia de marca. Método PONTO: diagnóstico, estratégia, direção, identidade e lançamento.',
-    images: ['/og-image.jpg'],
+    images: [ogImage.url],
   },
 };
 
